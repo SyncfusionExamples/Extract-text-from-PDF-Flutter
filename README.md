@@ -14,7 +14,7 @@ $ flutter pub get
 
 ```
 
-3. Once the package is updated, then run the below commands to execte the project.
+3. Run the below commands to execte the project.
 
 ```dart
 
