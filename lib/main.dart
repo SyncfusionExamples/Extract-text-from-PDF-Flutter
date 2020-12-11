@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Extract text with predefined bounds',
                 style: TextStyle(color: Colors.white),
               ),
-              onPressed: _extractTextWidthBounds,
+              onPressed: _extractTextWithBounds,
               color: Colors.blue,
             ),
             FlatButton(
@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _showResult(text);
   }
 
-  Future<void> _extractTextWidthBounds() async {
+  Future<void> _extractTextWithBounds() async {
     //Load the existing PDF document.
     PdfDocument document =
         PdfDocument(inputBytes: await _readDocumentData('invoice.pdf'));
@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
     PdfTextExtractor extractor = PdfTextExtractor(document);
 
     //Extract all the text from the particular page.
-    List<TextLine> result = extractor.extractTextWithLine(startPageIndex: 0);
+    List<TextLine> result = extractor.extractTextLines(startPageIndex: 0);
 
     //Predefined bound.
     Rect textBounds = Rect.fromLTWH(474, 161, 50, 9);
@@ -173,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
     PdfTextExtractor extractor = PdfTextExtractor(document);
 
     //Extract all the text from specific page.
-    List<TextLine> result = extractor.extractTextWithLine(startPageIndex: 0);
+    List<TextLine> result = extractor.extractTextLines(startPageIndex: 0);
 
     //Draw rectangle..
     for (int i = 0; i < result.length; i++) {
