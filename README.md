@@ -1,6 +1,6 @@
 # Extract text from PDF using Flutter
 
-This repository contains examples to extract text from PDF documents in Flutter apps using Syncfusion PDF Flutter library.
+This repository contains examples to extract text from PDF documents in Flutter apps using Syncfusion&reg; PDF Flutter library.
 
 ## Steps to extract text from the PDF document:
 
